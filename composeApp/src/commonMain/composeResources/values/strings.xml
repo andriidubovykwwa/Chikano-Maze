@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Chikano Maze</string>
+    <string name="play">Play</string>
+    <string name="progress">Progress</string>
+    <string name="tutorial">Tutorial</string>
+    <string name="level">Level</string>
+    <string name="completed">Completed</string>
+    <string name="failed">Failed</string>
+    <string name="full_star">Full Star</string>
+    <string name="empty_star">Empty Star</string>
+    <string name="select_level">Select Level</string>
+    <string name="level_locked">Level Locked</string>
+    <string name="locked">Locked</string>
+    <string name="skip_turn">Skip Turn</string>
+    <string name="acceleration">Acceleration</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    <string name="egg">Egg</string>
+    <string name="collected_egg">Collected Egg</string>
+    <string name="uncollected_egg">Uncollected Egg</string>
+    <string name="bush">Bush</string>
+    <string name="fence">Fence</string>
+    <string name="car">Car</string>
+    <string name="chicken">Chicken</string>
+    <string name="underground_way">Underground Way</string>
+    <string name="next">Next</string>
+    <string name="restart">Restart</string>
+    <string name="menu">Menu</string>
+    <string name="house">House</string>
+</resources>
