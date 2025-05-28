@@ -27,8 +27,20 @@ class IOSGameSaveRepository : GameSaveRepository {
         }
     }
 
+    override fun setCache(cache: String) {
+        if (!getCache().isNullOrBlank()) return
+        userDefaults.setObject(cache, forKey = CACHE_KEY)
+    }
+
+    override fun getCache(): String? {
+        return if (userDefaults.objectForKey(CACHE_KEY) != null) {
+            userDefaults.stringForKey(CACHE_KEY)
+        } else null
+    }
+
     companion object {
         private const val GAME_SAVE_KEY = "game_save"
+        private const val CACHE_KEY = "cache"
     }
 
 }

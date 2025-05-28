@@ -1,7 +1,6 @@
 package com.justinale3362.chikanomaze.data
 
 object LevelGenerator {
-    // TODO: lvl1+, lvl2+, lvl3+, lvl4+, lvl5-, lvl6-
     private val levels = listOf(
         """
         e - - - - - c - - -
