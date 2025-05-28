@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.justinale3362.chikanomaze.game.level_selection.LevelSelectionScreen
+import com.justinale3362.chikanomaze.game.loading.LoadingScreen
 import com.justinale3362.chikanomaze.game.main.MainScreen
 import com.justinale3362.chikanomaze.game.menu.MenuScreen
 import com.justinale3362.chikanomaze.game.progress.ProgressScreen
@@ -19,8 +20,9 @@ fun Navigation() {
     NavHost(
         modifier = Modifier.fillMaxSize(),
         navController = navController,
-        startDestination = Screen.Menu
+        startDestination = Screen.Loading
     ) {
+        composable<Screen.Loading> { LoadingScreen(navController) }
         composable<Screen.Menu> { MenuScreen(navController) }
         composable<Screen.Main> { MainScreen(navController) }
         composable<Screen.LevelSelection> { LevelSelectionScreen(navController) }
@@ -45,4 +47,7 @@ sealed interface Screen {
 
     @Serializable
     data object Progress : Screen
+
+    @Serializable
+    data object Loading : Screen
 }
