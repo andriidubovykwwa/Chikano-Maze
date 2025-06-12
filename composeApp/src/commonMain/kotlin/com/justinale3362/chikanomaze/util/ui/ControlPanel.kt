@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
@@ -49,7 +48,7 @@ fun ControlPanel(
         modifier.paint(
             painter = painterResource(Res.drawable.bottom_panel),
             contentScale = ContentScale.FillBounds
-        ).padding(paddingValues),
+        ).padding(paddingValues).padding(horizontal = 10.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -63,31 +62,31 @@ fun ControlPanel(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                modifier = Modifier.width(60.dp).offset(y = 10.dp).rotate(270f)
+                modifier = Modifier.width(40.dp).rotate(270f)
                     .clickable { onMove(Direction.UP) },
                 painter = painterResource(Res.drawable.move_arrow),
                 contentScale = ContentScale.FillWidth,
                 contentDescription = stringResource(Res.string.up)
             )
             Row(
-                horizontalArrangement = Arrangement.spacedBy(20.dp)
+                horizontalArrangement = Arrangement.spacedBy(40.dp)
             ) {
                 Image(
-                    modifier = Modifier.width(60.dp).rotate(180f)
+                    modifier = Modifier.width(40.dp).rotate(180f)
                         .clickable { onMove(Direction.LEFT) },
                     painter = painterResource(Res.drawable.move_arrow),
                     contentScale = ContentScale.FillWidth,
                     contentDescription = stringResource(Res.string.left)
                 )
                 Image(
-                    modifier = Modifier.width(60.dp).clickable { onMove(Direction.RIGHT) },
+                    modifier = Modifier.width(40.dp).clickable { onMove(Direction.RIGHT) },
                     painter = painterResource(Res.drawable.move_arrow),
                     contentScale = ContentScale.FillWidth,
                     contentDescription = stringResource(Res.string.right)
                 )
             }
             Image(
-                modifier = Modifier.width(60.dp).offset(y = (-10).dp).rotate(90f)
+                modifier = Modifier.width(40.dp).rotate(90f)
                     .clickable { onMove(Direction.DOWN) },
                 painter = painterResource(Res.drawable.move_arrow),
                 contentScale = ContentScale.FillWidth,
@@ -111,7 +110,7 @@ fun ControlPanel(
                 modifier = Modifier.align(Alignment.TopEnd),
                 text = if (accelrationMoves > 0) accelrationMoves.toString() else "${accelerations}x",
                 fontSize = 22.sp,
-                color = Color(0xff7AFCDA)
+                color = Color(0xffFFFFFF)
             )
         }
     }

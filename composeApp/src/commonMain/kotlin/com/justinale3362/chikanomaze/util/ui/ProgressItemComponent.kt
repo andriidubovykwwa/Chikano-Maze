@@ -19,9 +19,9 @@ import androidx.compose.ui.unit.sp
 import chikanomaze.composeapp.generated.resources.Res
 import chikanomaze.composeapp.generated.resources.blue_square
 import chikanomaze.composeapp.generated.resources.full_star
-import chikanomaze.composeapp.generated.resources.level_button_bg_blue
 import chikanomaze.composeapp.generated.resources.lock
 import chikanomaze.composeapp.generated.resources.locked
+import chikanomaze.composeapp.generated.resources.progress_item_bg
 import chikanomaze.composeapp.generated.resources.star_full
 import com.justinale3362.chikanomaze.data.ProgressItem
 import org.jetbrains.compose.resources.painterResource
@@ -40,7 +40,7 @@ fun ProgressItemComponent(
     ) {
         Row(
             Modifier.fillMaxHeight().weight(1f).paint(
-                painter = painterResource(Res.drawable.level_button_bg_blue),
+                painter = painterResource(Res.drawable.progress_item_bg),
                 contentScale = ContentScale.FillBounds
             ).padding(horizontal = 15.dp),
             verticalAlignment = Alignment.CenterVertically

@@ -66,14 +66,14 @@ fun TutorialScreen(navController: NavController) {
                         Modifier.align(Alignment.Center),
                         text = stringResource(Res.string.tutorial),
                         fontSize = 30.sp,
-                        color = Color(0xff7AFCDA)
+                        color = Color(0xffFFFFFF)
                     )
                 }
             }
             item {
                 Text(
                     "Welcome to the maze! You control a chicken trying to escape from a tricky labyrinth avoiding cars. Your main goal is to reach the exit (house), but you can also collect up to two eggs hidden in different parts of the level.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -83,7 +83,7 @@ fun TutorialScreen(navController: NavController) {
                             "- Escape only: 1 star\n" +
                             "- Escape + 1 egg: 2 stars\n" +
                             "- Escape + 2 eggs: 3 stars",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -115,21 +115,21 @@ fun TutorialScreen(navController: NavController) {
             item {
                 Text(
                     "The game encourages exploration and finding the most efficient route.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
             item {
                 Text(
                     "Additional gameplay mechanics:",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
             item {
                 Text(
                     "- Underground tunnels: A pair of connected cells lets you instantly travel between them.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -144,7 +144,7 @@ fun TutorialScreen(navController: NavController) {
             item {
                 Text(
                     "- Bushes: Hiding in bushed makes the chicken invisible to cars.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -158,8 +158,8 @@ fun TutorialScreen(navController: NavController) {
             }
             item {
                 Text(
-                    "- Enemy cars: These follow fixed paths. If they get close to the chicken (2 cells radius), you lose.",
-                    color = Color(0xff7AFCDA),
+                    "- Enemy cars: These follow fixed paths (roads). If they get close to the chicken (2 cells radius), you lose.",
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -174,7 +174,7 @@ fun TutorialScreen(navController: NavController) {
             item {
                 Text(
                     "- Move limit: Each level has a limited number of moves (displayed at the top of the screen), so plan carefully.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -182,13 +182,13 @@ fun TutorialScreen(navController: NavController) {
                 GameText(
                     text = "15",
                     fontSize = 30.sp,
-                    color = Color(0xff7AFCDA)
+                    color = Color(0xffFFFFFF)
                 )
             }
             item {
                 Text(
                     "- Acceleration: Once per level, you can acceleration to move 4 cells in a single turn. This can help you escape danger.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }
@@ -203,7 +203,7 @@ fun TutorialScreen(navController: NavController) {
             item {
                 Text(
                     "The more stars you collect, the more rewards you unlock, including new chicken skins and more accelerations per level.",
-                    color = Color(0xff7AFCDA),
+                    color = Color(0xffFFFFFF),
                     fontSize = defaultFontSize
                 )
             }

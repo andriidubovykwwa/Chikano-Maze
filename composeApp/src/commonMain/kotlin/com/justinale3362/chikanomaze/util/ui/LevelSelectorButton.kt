@@ -21,7 +21,7 @@ import chikanomaze.composeapp.generated.resources.Res
 import chikanomaze.composeapp.generated.resources.empty_star
 import chikanomaze.composeapp.generated.resources.full_star
 import chikanomaze.composeapp.generated.resources.level
-import chikanomaze.composeapp.generated.resources.level_button_bg_blue
+import chikanomaze.composeapp.generated.resources.level_button_bg_dark_green
 import chikanomaze.composeapp.generated.resources.level_button_bg_green
 import chikanomaze.composeapp.generated.resources.star_empty
 import chikanomaze.composeapp.generated.resources.star_full
@@ -39,7 +39,7 @@ fun LevelSelectorButton(
     Box(
         modifier
             .paint(
-                painter = painterResource(if (isUnlocked) Res.drawable.level_button_bg_green else Res.drawable.level_button_bg_blue),
+                painter = painterResource(if (isUnlocked) Res.drawable.level_button_bg_green else Res.drawable.level_button_bg_dark_green),
                 contentScale = ContentScale.FillBounds
             )
             .clip(RoundedCornerShape(10.dp))

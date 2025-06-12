@@ -2,6 +2,7 @@ package com.justinale3362.chikanomaze.util.ui
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,7 +25,7 @@ fun BackButton(
                 painter = painterResource(Res.drawable.back_button),
                 contentScale = ContentScale.FillBounds
             )
-            .clip(RoundedCornerShape(10.dp))
+            .clip(CircleShape)
             .clickable { onClick() },
     )
 }

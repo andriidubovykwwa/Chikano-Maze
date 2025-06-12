@@ -64,7 +64,7 @@ fun LoadingScreen() {
         )
         Box(Modifier.fillMaxSize().safeContentPadding()) {
             Image(
-                modifier = Modifier.align(Alignment.TopCenter).width(280.dp).scale(logoScale),
+                modifier = Modifier.align(Alignment.TopCenter).width(320.dp).scale(logoScale),
                 painter = painterResource(Res.drawable.logo),
                 contentScale = ContentScale.FillWidth,
                 contentDescription = stringResource(Res.string.app_name)

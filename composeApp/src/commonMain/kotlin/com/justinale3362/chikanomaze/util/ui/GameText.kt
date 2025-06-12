@@ -12,7 +12,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import chikanomaze.composeapp.generated.resources.Res
-import chikanomaze.composeapp.generated.resources.orbitron
+import chikanomaze.composeapp.generated.resources.baloo2
 import org.jetbrains.compose.resources.Font
 
 @Composable
@@ -28,7 +28,7 @@ fun GameText(
         color = color,
         fontSize = fontSize,
         fontWeight = FontWeight.Bold,
-        fontFamily = FontFamily(Font(Res.font.orbitron)),
+        fontFamily = FontFamily(Font(Res.font.baloo2)),
         style = TextStyle(
             shadow = Shadow(
                 color = Color.Black,

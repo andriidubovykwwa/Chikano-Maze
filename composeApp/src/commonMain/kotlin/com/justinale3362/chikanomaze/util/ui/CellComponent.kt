@@ -23,6 +23,8 @@ import chikanomaze.composeapp.generated.resources.egg_full
 import chikanomaze.composeapp.generated.resources.fence
 import chikanomaze.composeapp.generated.resources.grass
 import chikanomaze.composeapp.generated.resources.house
+import chikanomaze.composeapp.generated.resources.road
+import chikanomaze.composeapp.generated.resources.road_horizontal
 import chikanomaze.composeapp.generated.resources.tunnel
 import chikanomaze.composeapp.generated.resources.underground_way
 import chikanomaze.composeapp.generated.resources.wall
@@ -39,9 +41,22 @@ fun CellComponent(
     cell: Cell,
     index: Int
 ) {
+    val allCarPositions: List<Int> = carMovements.flatMap { it.positions }
     Box(
         modifier.aspectRatio(1f)
-            .paint(painterResource(Res.drawable.cell), contentScale = ContentScale.FillBounds)
+            .paint(
+                painterResource(
+                    if (allCarPositions.contains(index)) {
+                        if ((index % 10 != 0 && allCarPositions.contains(index - 1))
+                            || (index % 10 != 9 && allCarPositions.contains(index + 1))
+                        ) {
+                            Res.drawable.road_horizontal
+                        } else {
+                            Res.drawable.road
+                        }
+                    } else Res.drawable.cell
+                ), contentScale = ContentScale.FillBounds
+            )
             .shadow(
                 elevation = 2.dp,
                 ambientColor = Color(0xff00E5FF),

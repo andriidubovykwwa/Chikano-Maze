@@ -65,7 +65,7 @@ fun LevelSelectionScreen(
                     Modifier.align(Alignment.Center),
                     text = stringResource(Res.string.select_level),
                     fontSize = 40.sp,
-                    color = Color(0xff7AFCDA)
+                    color = Color(0xffFFFFFF)
                 )
             }
             itemsIndexed(state.gameSaveData.stars) { index, stars ->
@@ -79,7 +79,7 @@ fun LevelSelectionScreen(
                             modifier = Modifier.padding(top = 20.dp),
                             text = stringResource(Res.string.level_locked),
                             fontSize = 40.sp,
-                            color = Color(0xff7AFCDA)
+                            color = Color(0xffFFFFFF)
                         )
                     }
                     LevelSelectorButton(

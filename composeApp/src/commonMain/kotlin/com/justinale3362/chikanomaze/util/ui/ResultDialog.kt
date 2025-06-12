@@ -4,6 +4,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -19,12 +20,12 @@ import androidx.compose.ui.window.Dialog
 import chikanomaze.composeapp.generated.resources.Res
 import chikanomaze.composeapp.generated.resources.button_bg_red
 import chikanomaze.composeapp.generated.resources.completed
-import chikanomaze.composeapp.generated.resources.dialog_bg
 import chikanomaze.composeapp.generated.resources.empty_star
 import chikanomaze.composeapp.generated.resources.failed
 import chikanomaze.composeapp.generated.resources.full_star
 import chikanomaze.composeapp.generated.resources.menu
 import chikanomaze.composeapp.generated.resources.next
+import chikanomaze.composeapp.generated.resources.progress_item_bg
 import chikanomaze.composeapp.generated.resources.restart
 import chikanomaze.composeapp.generated.resources.star_empty
 import chikanomaze.composeapp.generated.resources.star_full
@@ -45,48 +46,57 @@ fun ResultDialog(
         Column(
             modifier,
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(20.dp)
+            verticalArrangement = Arrangement.spacedBy(30.dp)
         ) {
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(1.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                val emptyStars = 3 - stars
-                repeat(stars) {
-                    Image(
-                        modifier = Modifier.width(65.dp),
-                        painter = painterResource(Res.drawable.star_full),
-                        contentDescription = stringResource(Res.string.full_star),
-                        contentScale = ContentScale.FillWidth
-                    )
-                }
-                repeat(emptyStars) {
-                    Image(
-                        modifier = Modifier.width(65.dp),
-                        painter = painterResource(Res.drawable.star_empty),
-                        contentDescription = stringResource(Res.string.empty_star),
-                        contentScale = ContentScale.FillWidth
-                    )
-                }
-            }
             Column(
-                Modifier.size(250.dp).paint(
-                    painterResource(Res.drawable.dialog_bg),
-                    contentScale = ContentScale.FillBounds
-                ).padding(25.dp),
+                modifier = Modifier.paint(
+                    painterResource(Res.drawable.progress_item_bg),
+                    contentScale = ContentScale.Fit
+                ).padding(horizontal = 10.dp, vertical = 15.dp),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceBetween
+                verticalArrangement = Arrangement.Center
             ) {
                 GameText(
                     text = "Level $lvl",
                     fontSize = 25.sp,
-                    color = Color(0xff7AFCDA)
+                    color = Color(0xffFFFFFF)
                 )
                 GameText(
                     text = stringResource(if (isLevelCompleted) Res.string.completed else Res.string.failed),
                     fontSize = 25.sp,
-                    color = Color(0xff7AFCDA)
+                    color = Color(0xffFFFFFF)
                 )
+
+            }
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(1.dp),
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                repeat(3) { starIndex ->
+                    if (stars > starIndex) {
+                        Image(
+                            modifier = Modifier.offset(y = if (starIndex == 1) (-30).dp else 0.dp)
+                                .width(65.dp),
+                            painter = painterResource(Res.drawable.star_full),
+                            contentDescription = stringResource(Res.string.full_star),
+                            contentScale = ContentScale.FillWidth
+                        )
+                    } else {
+                        Image(
+                            modifier = Modifier.offset(y = if (starIndex == 1) (-30).dp else 0.dp)
+                                .width(65.dp),
+                            painter = painterResource(Res.drawable.star_empty),
+                            contentDescription = stringResource(Res.string.empty_star),
+                            contentScale = ContentScale.FillWidth
+                        )
+                    }
+                }
+            }
+            Column(
+                Modifier.padding(25.dp),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(20.dp)
+            ) {
                 if (lvl < LevelGenerator.maxLvl || !isLevelCompleted) {
                     GameButton(
                         Modifier.size(120.dp, 60.dp),

@@ -63,7 +63,7 @@ fun ProgressScreen(navController: NavController, viewModel: ProgressViewModel = 
                         Modifier.align(Alignment.Center),
                         text = stringResource(Res.string.progress),
                         fontSize = 30.sp,
-                        color = Color(0xff7AFCDA)
+                        color = Color(0xffFFFFFF)
                     )
                 }
             }
@@ -75,7 +75,7 @@ fun ProgressScreen(navController: NavController, viewModel: ProgressViewModel = 
                     GameText(
                         text = state.gameSaveData.allStars.toString(),
                         fontSize = 30.sp,
-                        color = Color(0xff7AFCDA)
+                        color = Color(0xffFFFFFF)
                     )
                     Image(
                         modifier = Modifier.width(40.dp),

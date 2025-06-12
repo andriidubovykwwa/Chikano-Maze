@@ -77,8 +77,8 @@ fun MainScreen(navController: NavController, viewModel: MainViewModel = koinView
             }
             GameText(
                 text = state.movesLeft.toString(),
-                fontSize = 30.sp,
-                color = Color(0xff7AFCDA)
+                fontSize = 40.sp,
+                color = Color(0xffFFFFFF)
             )
             Row(
                 horizontalArrangement = Arrangement.spacedBy(2.dp)
